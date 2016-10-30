@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>continue</title>
+<script type="text/JavaScript">
+ var mynum =new Array(70,80,66,90,50,100,89);//定义数组mynum并赋值
+ var i;
+ for(i=0;i<mynum.length;i++)
+ {
+  	if(mynum[i]<60)
+    {
+	document.write("成绩不及格，不输出！"+"<br>");
+	continue;
+	}
+	document.write("成绩:"+mynum[i]+"及格，输出!"+"<br>");
+}
+</script>
+</head>
+<body>
+</body>
+</html>

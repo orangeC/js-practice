@@ -6,18 +6,22 @@
 </head>
 <script type="text/javascript">
   var num=0;
-  function startCount() {
+  var i;
+  function startCount(){
     document.getElementById('count').value=num;
     num=num+1;
-     setTimeout("startCount()",1000);
+    i=setTimeout("startCount()",1000);
   }
-  
+  function stopCount(){
+  clearTimeout(i);
+  }
 </script>
-<!-- 要创建一个运行于无穷循环中的计数器，我们需要编写一个函数来调用其自身。在下面的代码，当按钮被点击后，输入域便从0开始计数。 -->
 </head>
 <body>
-<form>
-<input type="text" id="count" onclick="startCount()"/>
-</form>
+  <form>
+    <input type="text" id="count" />
+    <input type="button" value="Start"  onclick="startCount()"/>
+    <input type="button" value="Stop"  onclick="stopCount()" />
+  </form>
 </body>
 </html>

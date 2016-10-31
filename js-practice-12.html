@@ -21,13 +21,38 @@
 JavaScript
 love -->
 
+
+
+
+<!-- 注意：如果参数startPos是负数，从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。
+
+如果startPos为负数且绝对值大于字符串长度，startPos为0。
+
+使用 substr() 从字符串中提取一些字符，代码如下：
+
+<script type="text/javascript">
+  var mystr="I love JavaScript!";
+  document.write(mystr.substr(7));
+  document.write(mystr.substr(2,4));
+</script>
+运行结果：
+
+JavaScript!
+love -->
+
 </head>
 <body>
 <img src="http://img.mukewang.com/532bf1bb000151af04450082.jpg" alt=""><br>
+<img src="http://img.mukewang.com/532bf2e00001105305100098.jpg" alt="">
 </body>
+
 <script type="text/javascript">
 var mystr="Hello World!"
 document.write( mystr.substring(6,12)        + "<br />");
-document.write( mystr.substring(0,6)                  );
+document.write( mystr.substring(0,6)         + "<br />"   );
+
+
+document.write( mystr.substr(6)         + "<br />");
+document.write(  mystr.substr(0,5)                   );
 </script>
 </html>

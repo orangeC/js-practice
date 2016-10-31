@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>操作成功</h2>
+
+  <p><b id="second"></b>秒后回到主页 <a href="back()">返回</a></p>
+</body>
+	
+
+  <script type="text/javascript">  
+
+  var i=5;
+
+  function daoshu(){
+
+    document.getElementById("second").innerHTML=i;
+
+    i--;
+
+    if(i==-1){
+    	 location="http://www.imooc.com";
+    }
+
+    setTimeout(daoshu,1000);
+
+  }
+
+  daoshu();
+
+ </script>
+</html>

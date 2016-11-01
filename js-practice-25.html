@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+
+<ul id="test"><li>JavaScript</li><li>HTML</li></ul> 
+ 
+<script type="text/javascript">
+
+  var otest = document.getElementById("test");  
+  var oLi = document.createElement("li");
+  oLi.innerHTML = "php";
+  var aLi = document.getElementsByTagName("li");
+  otest.insertBefore(oLi,aLi[1])
+  
+  
+  
+</script> 
+<!-- insertBefore(newnode,node);
+
+参数:
+
+newnode: 要插入的新节点。
+
+node: 指定此节点前插入节点。
+
+我们在来看看下面代码，在指定节点前插入节点。
+
+
+
+运行结果:
+
+This is a new p
+JavaScript
+HTML
+注意: otest.insertBefore(newnode,node); 也可以改为:  otest.insertBefore(newnode,otest.childNodes[0]);  -->
+
+</body>
+</html>

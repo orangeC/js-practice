@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<img src="http://img.mukewang.com/539557d70001c3ee07190429.jpg" alt=""><br>
+
+
+  <div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+  <a href="javascript:replaceMessage()"> 将加粗改为斜体</a>
+  
+    <script type="text/javascript">
+      function replaceMessage(){
+
+        var oldnode=document.getElementById("oldnode");
+
+        var newnode=document.createElement("i");
+
+        newnode.innerHTML=oldnode.innerHTML;
+
+        newnode.style.fontweight="blod";
+
+       
+
+        oldnode.parentNode.replaceChild(newnode,oldnode);       
+
+       }
+   
+  </script>
+  <!-- 替换元素节点replaceChild()
+replaceChild 实现子节点(对象)的替换。返回被替换对象的引用。 
+
+语法：
+
+node.replaceChild (newnode,oldnew ) 
+参数：
+
+newnode : 必需，用于替换 oldnew 的对象。 
+oldnew : 必需，被 newnode 替换的对象。
+
+我们来看看下面的代码:
+
+ 
+
+效果: 将文档中的 Java 改为 JavaScript。
+
+注意: 
+
+1. 当 oldnode 被替换时，所有与之相关的属性内容都将被移除。 
+
+2. newnode 必须先被建立。  -->
+  
+ </body>
+</html>

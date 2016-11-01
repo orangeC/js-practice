@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<div>
+  javascript  
+  <p>javascript</p>
+  <div>jQuery</div>
+  <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+ var mydiv=document.getElementsByTagName("div");
+
+ for(var i=0;i<mydiv[0].childNodes.length;i++)
+
+ {
+
+    document.write(mydiv[0].childNodes[i].nodeName+"<br>"); 
+
+    document.write(mydiv[0].childNodes[i].nodeValue+"<br>"); 
+
+    document.write(mydiv[0].childNodes[i].nodeType+"<br>"); 
+
+ }
+
+ 
+ 
+</script>
+</body>
+</html>

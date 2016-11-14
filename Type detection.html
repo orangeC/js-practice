@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>11.14</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Untitled Document</title>
 </head>
 <body>
-	<script type="text/javascript">
-		
-		console.log(typeof( 3 == "3"))
-	</script>
+	<script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+        function arraysSimilar(arr1, arr2) {
+	    // 判断参数，确保arr1, arr2是数组，若不是直接返回false
+	    if (!(arr1 instanceof Array)
+	        || !(arr2 instanceof Array)) {
+	        return false;
+	    }
+	 
+	    // 判断长度
+	    if (arr1.length !== arr2.length) return false;
+	 
+	    var i = 0, 
+	        n = arr1.length, 
+	        countMap1 = {},  // 用来计算数组元素数据类型个数的map，key是TYPES中的类型字符串，value是数字表示出现次数。
+	        countMap2 = {},
+	        t1, t2,
+	        TYPES = ['string', 'boolean', 'number', 'undefined', 'null',
+	            'function', 'date', 'window'];
+	 
+	    // 因为是无序的，用一个对象来存储处理过程。key为类型, value为该类型出现的次数。
+	    // 最后校验：若每一种数据类型出现的次数都相同（或都不存在），则证明同构。
+	    for (; i < n; i++) {
+	        t1 = typeOf(arr1[i]);
+	        t2 = typeOf(arr2[i]);
+	        if (countMap1[t1]) {
+	            countMap1[t1]++;
+	        } else {
+	            countMap1[t1] = 1;
+	        }
+	        if (countMap2[t2]) {
+	            countMap2[t2]++;
+	        } else {
+	            countMap2[t2] = 1;
+	        }
+	    }
+	 
+	    // 因为typeof只能判断原始类型，且无法判断null(返回"object")，所以自己写typeof方法扩展。
+	    function typeOf(ele) {
+	        var r;
+	        if (ele === null) r = 'null'; // 判断null
+	        else if (ele instanceof Array) r = 'array';  // 判断数组对象
+	        else if (ele === window) r = 'window';  // 判断window
+	        else if (ele instanceof Date) r = 'date'  // 判断Date对象
+	        else r = typeof ele; // 其它的，使用typeof判断
+	        return r;
+	    }
+	 
+	    for (i = 0, n = TYPES.length; i < n; i++) {
+	        if (countMap1[TYPES[i]] !== countMap2[TYPES[i]]) {
+	            return false;
+	        }
+	    }
+	 
+	    return true;
+	}
+    </script>
+    <script src="testData.js"></script>
 	<!-- 检测类型：
 
 	1.typeof 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function selectionSort(arr){
+			var length = arr.length;
+			var minIndex ,temp;
+			for(i=0;i<length-1;i++){
+				minIndex = i;
+				for(j=i+1;j<length;j++){
+					if(arr[j]<arr[minIndex]){     //寻找最小的数
+						minIndex = j;              //将最小数的索引保存
+					}
+				}
+				temp = arr[minIndex];
+				arr[minIndex] = arr[i];
+				arr[i] = temp;
+			}
+			return arr
+		}
+		var abc=[2,4,6,8,1,3,7,9];
+		var s = selectionSort(abc);
+		console.log(s)
+	</script>
+</body>
+</html>

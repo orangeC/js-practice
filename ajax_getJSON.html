@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+        <title>使用getJSON()方法异步加载JSON格式数据</title>
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+        <div id="divtest">
+            <div class="title">
+                <span class="fl">我最喜欢的一项运动</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul></ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $.getJSON("http://www.imooc.com/data/sport.json",function(data){
+                        $this.attr("disabled", "true");
+                        $.each(data, function (index, sport) {
+                            if(index==3)
+                            $("ul").append("<li>" + sport["name"] + "</li>");
+                        });
+    
+                    });
+                })
+            });
+        </script>
+    </body>
+</html>

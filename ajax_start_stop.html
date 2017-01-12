@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta charset="utf-8">
+        <title>使用ajaxStart()和ajaxStop()方法</title>
+        <script src="http://libs.baidu.com/jquery/1.8.2/jquery.js" type="text/javascript"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        <div id="divtest">
+            <div class="title">
+                <span class="fl">加载一段文字</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul>
+               <li id="divload"></li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#divload").ajaxStart(function(){
+                    $(this).html("正在请求数据...");
+                });
+                $("#divload").ajaxStop(function(){
+                    $(this).html("数据请求完成！");
+                });
+                $("#btnShow").bind("click", function () {
+                    var $this = $(this);
+                    $.ajax({
+                        url: "http://www.imooc.com/data/info_f.php",
+                        dataType: "json",
+                        success: function (data) {
+                            $this.attr("disabled", "true");
+                        $("ul").append("<li>我的名字叫：" + data.name + "</li>");
+                        $("ul").append("<li>男朋友对我说：" + data.say + "</li>");
+                        }
+                    });
+                })
+            });
+        </script>
+        <img src="http://img.mukewang.com/52dcfb3a0001746d06020435.jpg">
+    </body>
+</html>

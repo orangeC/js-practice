@@ -26,9 +26,9 @@
             $(function () {
                 $("#btnCheck").bind("click", function () {
                     $.ajax({
+                        type："POST",
                         url:"http://www.imooc.com/data/check.php",
                         data: { num: $("#txtNumber").val() },
-                        type："post",
                         dataType:"text",
                         success: function (data) {
                             $("ul").append("<li>你输入的<b>  "

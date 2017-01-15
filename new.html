@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li> <a href=""> <b></b></a> </li>
+			<li> <span></span></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+window.onload=function(){
+
+	var oA = document.getElementsByTagName("li");
+	function getParents(dom){
+		var parents = []
+		while(dom.parentNode){
+			parents.push(dom.parentNode);
+			dom=dom.parentNode
+		}
+		var a = parents
+		return a;
+	}
+	// for(var i=0;i<3;i++){
+	// 	setTimeout(function(){
+	// 	},1000*i)
+	// 		alert(i)
+	// }
+	// console.log(oA[0].parentNode)
+	console.log(getParents(oA[0]))
+}
+</script>
+</html>

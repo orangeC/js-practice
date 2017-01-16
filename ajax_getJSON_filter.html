@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<div class="container-fluid">
+		  <div class = "row text-center">
+		    <h2>Cat Photo Finder</h2>
+		  </div>
+		  <div class = "row text-center">
+		    <div class = "col-xs-12 well message">
+		      The message will go here
+		    </div>
+		  </div>
+		  <div class = "row text-center">
+		    <div class = "col-xs-12">
+		      <button id = "getMessage" class = "btn btn-primary">
+		        Get Message
+		      </button>
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+		    $("#getMessage").on("click", function() {
+		      $.getJSON("/json/cats.json", function(json) {
+
+		        var html = "";
+
+		        // Only change code below this line.
+		        json = json.filter(function(val) {
+		          return (val.id !== 1);
+		        });
+		        
+		        
+		        // Only change code above this line.
+
+		        json.forEach(function(val) {
+
+		          html += "<div class = 'cat'>"
+
+		          html += "<img src = '" + val.imageLink + "'>"
+
+		          html += "</div>"
+
+		        });
+
+		        $(".message").html(html);
+
+          });
+       });
+  });
+		</script>
+</body>
+</html>
+<!-- 如果我们不想把所有从JSON API中得到的图片都展现出来，我们可以在遍历之前做一次过滤。
+
+我们把其中 "id" 键的值为1的图片过滤掉。
+
+代码如下:
+
+json = json.filter(function(val) {
+  return (val.id !== 1);
+}); -->

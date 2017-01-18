@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用中括号操作符来 访问对象的变量属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Setup
+		var testObj = {
+		  12: "Namath",
+		  16: "Montana",
+		  19: "Unitas"
+		};
+
+		// Only change code below this line;
+		var playerNumber = 16;       // Change this Line
+		var player = testObj[playerNumber];   // Change this Line
+		console.log(player)
+	</script>
+</body>
+</html>
+
+<!-- 中括号操作符的另一个使用方式是用变量来访问一个属性。当你需要遍历对象的属性列表或查表时，这种方式极为有用。
+
+这有一个使用变量来访问属性的例子：
+
+var someProp = "propName";
+var myObj = {
+  propName: "Some Value"
+}
+myObj[someProp]; // "Some Value"
+还有更多：
+
+var myDog = "Hunter";
+var dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+}
+var breed = dogs[myDog]; // "Hunter"
+console.log(breed)// "Doberman"
+提示：当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。 -->
